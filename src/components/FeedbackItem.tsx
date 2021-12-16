@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaTimes } from 'react-icons/fa';
-import Card from 'shared/Card';
+import Card from 'components/shared/Card';
 
 interface IProps {
   item: IFeedback;
