@@ -2976,6 +2976,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/uuid@npm:^8.3.3":
+  version: 8.3.3
+  resolution: "@types/uuid@npm:8.3.3"
+  checksum: 3f340155bb1161f9ffa7163926d6222fea8f3505c23619b72bcc230883354926672c08a06510c7a543f73553c792a84444cc1744cff631b4ba988763e4bd7a8f
+  languageName: node
+  linkType: hard
+
 "@types/webpack-sources@npm:*":
   version: 2.1.0
   resolution: "@types/webpack-sources@npm:2.1.0"
@@ -8610,6 +8617,7 @@ __metadata:
     "@types/node": ^16.11.12
     "@types/react": ^17.0.37
     "@types/react-dom": ^17.0.11
+    "@types/uuid": ^8.3.3
     "@typescript-eslint/eslint-plugin": ^5.7.0
     "@typescript-eslint/parser": ^5.7.0
     commitizen: ^4.2.4
@@ -8639,6 +8647,7 @@ __metadata:
     stylelint-config-standard: ^24.0.0
     stylelint-order: ^5.0.0
     typescript: ^4.5.3
+    uuid: ^8.3.2
     web-vitals: ^2.1.2
   languageName: unknown
   linkType: soft
@@ -19834,7 +19843,7 @@ typescript@^4.4.3:
   languageName: node
   linkType: hard
 
-"uuid@npm:^8.3.0":
+"uuid@npm:^8.3.0, uuid@npm:^8.3.2":
   version: 8.3.2
   resolution: "uuid@npm:8.3.2"
   bin:
