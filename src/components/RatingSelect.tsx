@@ -1,11 +1,17 @@
-import React, { useState } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
+import { FeedbackContext } from 'context/FeedbackContext';
 
 interface IProps {
   select: (rating: number) => void;
 }
 
 const RatingSelect = ({ select }: IProps) => {
+  const { feedbackEdit } = useContext(FeedbackContext);
   const [selected, setSelected] = useState(10);
+
+  useEffect(() => {
+    setSelected(feedbackEdit.item.rating);
+  }, [feedbackEdit]);
 
   const handleChange = (e: ChangeInput) => {
     setSelected(+e.currentTarget.value);

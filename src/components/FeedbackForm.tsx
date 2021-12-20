@@ -1,17 +1,25 @@
-import React, { useState } from 'react';
+/* eslint-disable @typescript-eslint/ban-ts-comment */
+import React, { useContext, useState, useEffect } from 'react';
 import RatingSelect from './RatingSelect';
 import Button from './shared/Button';
 import Card from './shared/Card';
+import { FeedbackContext } from 'context/FeedbackContext';
 
-interface IProps {
-  handleAdd: (args: NewFeedback) => void;
-}
-
-const FeedbackForm = ({ handleAdd }: IProps) => {
+const FeedbackForm = () => {
+  const { addFeedback, feedbackEdit, updateFeedback } =
+    useContext(FeedbackContext);
   const [text, setText] = useState('');
   const [rating, setRating] = useState(10);
   const [btnDisabled, setBtnDisabled] = useState(true);
   const [message, setMessage] = useState('');
+
+  useEffect(() => {
+    if (feedbackEdit.edit) {
+      setBtnDisabled(false);
+      setText(feedbackEdit.item.text);
+      setRating(feedbackEdit.item.rating);
+    }
+  }, [feedbackEdit]);
 
   const handleTextChange = (e: ChangeInput) => {
     if (text === '') {
@@ -35,7 +43,13 @@ const FeedbackForm = ({ handleAdd }: IProps) => {
         text,
         rating,
       };
-      handleAdd(newFeedback);
+
+      if (feedbackEdit.edit) {
+        // @ts-ignore
+        updateFeedback(feedbackEdit.item.id, newFeedback);
+      } else {
+        addFeedback(newFeedback);
+      }
 
       setText('');
     }
