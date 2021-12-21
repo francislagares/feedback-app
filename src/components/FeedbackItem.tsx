@@ -1,14 +1,14 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { FaTimes, FaEdit } from 'react-icons/fa';
 import Card from 'components/shared/Card';
-import { FeedbackContext } from 'context/FeedbackContext';
+import { useFeedbackContext } from 'context/FeedbackContext';
 
 interface IProps {
   item: IFeedback;
 }
 
 const FeedbackItem = ({ item }: IProps) => {
-  const { editFeedback, deleteFeedback } = useContext(FeedbackContext);
+  const { editFeedback, deleteFeedback } = useFeedbackContext();
 
   return (
     <Card>

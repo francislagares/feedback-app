@@ -1,12 +1,12 @@
-import React, { useState, useContext, useEffect } from 'react';
-import { FeedbackContext } from 'context/FeedbackContext';
+import React, { useState, useEffect } from 'react';
+import { useFeedbackContext } from 'context/FeedbackContext';
 
 interface IProps {
   select: (rating: number) => void;
 }
 
 const RatingSelect = ({ select }: IProps) => {
-  const { feedbackEdit } = useContext(FeedbackContext);
+  const { feedbackEdit } = useFeedbackContext();
   const [selected, setSelected] = useState(10);
 
   useEffect(() => {

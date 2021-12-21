@@ -1,13 +1,13 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
-import React, { useContext, useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import RatingSelect from './RatingSelect';
 import Button from './shared/Button';
 import Card from './shared/Card';
-import { FeedbackContext } from 'context/FeedbackContext';
+import { useFeedbackContext } from 'context/FeedbackContext';
 
 const FeedbackForm = () => {
-  const { addFeedback, feedbackEdit, updateFeedback } =
-    useContext(FeedbackContext);
+  const { addFeedback, feedbackEdit, updateFeedback } = useFeedbackContext();
+
   const [text, setText] = useState('');
   const [rating, setRating] = useState(10);
   const [btnDisabled, setBtnDisabled] = useState(true);
