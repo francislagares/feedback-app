@@ -46,7 +46,7 @@
 - Start the development server:
 
   ```bash
-  yarn start
+  yarn start:dev
   ```
 
 - Start the test suites:
